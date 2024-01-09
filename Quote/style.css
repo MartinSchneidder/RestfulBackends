@@ -65,6 +65,7 @@ h1 {
 
 .quoteContainer {
   display: flex;
+  margin-top: 20vh;
   margin-left: var(--var-QuoteMargin-left);
 }
 .quotas {
