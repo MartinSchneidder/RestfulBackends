@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <header class="header" id="header">
+      <div>
+        <input
+          type="range"
+          name="red"
+          id="red"
+          step="1"
+          min="0"
+          max="255"
+          value="255"
+        />
+        <input
+          type="range"
+          name="green"
+          id="green"
+          step="1"
+          min="0"
+          max="255"
+          value="105"
+        />
+        <input
+          type="range"
+          name="blue"
+          id="blue"
+          step="1"
+          min="0"
+          max="255"
+          value="180"
+        />
+      </div>
+      <div>
+        <div id="hexa">HEXZAHL</div>
+        <button id="button_randomColor" role="button">Random Color</button>
+      </div>
+    </header>
+
+    <div id="showColor"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
