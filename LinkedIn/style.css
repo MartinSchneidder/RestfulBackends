@@ -1,7 +1,8 @@
 body {
 }
-.cardWindow {
-  margin: 0.5rem;
+#cardWindow {
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   border: 2px solid gainsboro;
   border-radius: 1rem;
@@ -10,31 +11,27 @@ body {
 
   display: flex;
   flex-wrap: wrap;
-
-  z-index: -100;
 }
 
 .card {
   width: 20rem;
   height: 35rem;
   margin: 1rem;
-  border: 2px solid lightgray;
+  border: 1px solid lightgray;
   border-radius: 1rem;
 
   position: relative;
 }
 
 .background {
-  width: 20rem;
-  height: 35rem;
-  border: 0px solid lightgray;
-  border-radius: 1rem;
-
-  background: url("https://source.unsplash.com/random/300×300");
-  /*clip-path: rect(0px 20rem HIGHTrem 0px);*/
-  clip-path: rect(0px 20rem 8rem 0px);
+  width: 100%; /*20rem */
+  height: 8rem;
+  border-radius: 1rem 1rem 0 0;
   position: absolute;
-  z-index: -10;
+
+  object-fit: cover;
+  object-position: top center;
+  z-index: -1;
 }
 
 .picture {
@@ -69,6 +66,6 @@ body {
   width: 8rem;
   height: 2rem;
 }
-
-#backid {
+.button_close:hover {
+  background-color: red;
 }
