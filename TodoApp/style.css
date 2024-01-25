@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  font-family: monospace;
+}
+
+.header {
+  background-color: black;
+  border-bottom: 0.5rem #818181 solid;
+  color: white;
+
+  height: 15vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+input[type="checkbox"] {
+  margin-right: 15px;
+}
+
+.col_list {
+  margin-top: 20vh;
+  margin-left: 20vw;
+  font-size: 2rem;
+}
+
+#list {
+  list-style-type: none;
+}
+
+/*///////////////////*/
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 15.5vh;
+  left: 0vw;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+/*CloseSidebar*/
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+.input {
+  padding: 8px 8px 8px 0px;
+  margin-left: 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.inputLabel {
+  padding: 8px 8px 8px 20px;
+  margin-left: 8px;
+  margin-right: 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+}
+#input {
+  margin-left: 10px;
+  width: 220px;
+  color: #111;
+}
+#btn_add {
+  position: absolute;
+  top: 160px;
+  left: 30px;
+  font-size: 20px;
+  width: 180px;
+
+  color: white;
+  background-color: #5a5a5a;
+}
+.radiobuttons {
+  margin-top: 50px;
+  padding: 30px;
+  color: white;
+  font-size: larger;
+}
+
+#btn_rmvdone {
+  width: 180px;
+  margin-left: 30px;
+  color: white;
+  background-color: #5a5a5a;
+}
+#btn_rmvdone:hover {
+  background-color: gray;
+  transition: 0.2s;
+}
+#btn_add:hover {
+  background-color: gray;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+  transition: 0.2s;
+}
+.inputLabel:hover {
+  background-color: #302f2f;
+  transition: 0.2s;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.openbtn {
+  position: sticky;
+  top: 15.5vh;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+}
+.openbtn:hover {
+  background-color: #444;
+}
+#mainList {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+/* Benutzerdefinierte Checkboxen!!! */
+/* [type="checkbox"] {
+    position: absolute;
+  }
+  [type="checkbox"] {
+    position: relative;
+    -webkit-appearance: none;
+  }
+  [type="checkbox"]::before {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    display: block;
+    content: "";
+    float: left;
+    margin-right: 5px;
+    z-index: 5;
+    position: relative;
+  }
+  input[type="checkbox"]:checked::before {
+    background-color: green;
+  } */

@@ -111,12 +111,14 @@ function fun_click_connect_pending(a) {}
 init();
 
 //WHAT TO DO PLAN
-//init ->build a card DONE
-//  ->build 8 cards   DONE
-//load data in cards  DONE
+//init ->build a card         DONE
+//  ->build 8 cards           DONE
+//load data in cards          DONE
 
-//connect-> pending++
-//close -> pending--
-//  ->close card
-//  ->new card
-//restbutton->reset pending
+//connect-> pending++         Done
+//close -> pending--          Done
+//  ->close card              Done
+//  ->new card                Done
+//restbutton->reset pending   Done
+
+//Persistend Pending
