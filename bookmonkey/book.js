@@ -42,10 +42,18 @@ function Url_to_queryString(querystring) {
   });
 }
 
-//creates li-Parent for the input
-function liAppend(input) {
+/**
+ * creates li-Parent for the Data Array
+ * @param {*} Data Array
+ * @returns li-Element with appended children from Data-Array
+ */
+function liAppend(Data) {
   const listEl = document.createElement("li");
-  listEl.append(input);
+
+  Data.forEach((element) => {
+    listEl.append(element);
+  });
+
   return listEl;
 }
 function renderBook() {
@@ -55,41 +63,55 @@ function renderBook() {
   const bookTitle = document.createElement("h1");
   bookTitle.innerText = state.book.title;
 
-  const bookSubtitle = document.createElement("p");
+  const bookSubtitle = document.createElement("h3");
   bookSubtitle.innerText = state.book.subtitle;
 
   const bookAuthor = document.createElement("p");
   bookAuthor.innerText = "von '" + state.book.author + "'";
 
   const bookIsbn = document.createElement("p");
-  bookIsbn.innerText = "ISBN: " + state.book.isbn;
+  bookIsbn.classList.add("p_identifier");
+  bookIsbn.innerText = "ISBN: ";
+  const bookIsbnData = document.createElement("p");
+  bookIsbnData.innerText = state.book.isbn;
 
   const bookAbstract = document.createElement("p");
   bookAbstract.innerText = state.book.abstract;
+  //.innerHtml würde manche Formatierung besser darstellen, öffnet aber Sicherheitslücken
 
   const bookPublisher = document.createElement("p");
-  bookPublisher.innerText = "Publisher: " + state.book.publisher;
+  bookPublisher.classList.add("p_identifier");
+  bookPublisher.innerText = "Publisher: ";
+  const bookPublisherData = document.createElement("p");
+  bookPublisherData.innerText = state.book.publisher;
 
   const bookPrice = document.createElement("p");
-  bookPrice.innerText = "Price: " + state.book.price;
+  bookPrice.classList.add("p_identifier");
+  bookPrice.innerText = "Price: ";
+  const bookPriceData = document.createElement("p");
+  bookPriceData.innerText = state.book.price;
 
   const bookNumPages = document.createElement("p");
-  bookNumPages.innerText = "Pages: " + state.book.numPages;
+  bookNumPages.classList.add("p_identifier");
+  bookNumPages.innerText = "Pages: ";
+  const bookNumPagesData = document.createElement("p");
+  bookNumPagesData.innerText = state.book.numPages;
 
   const bookCover = document.createElement("img");
   bookCover.src = state.book.cover;
 
   //====append ELEMENTS
   div_book.append(
-    liAppend(bookTitle),
-    liAppend(bookSubtitle),
-    liAppend(bookAuthor),
-    liAppend(bookIsbn),
-    liAppend(bookAbstract),
-    liAppend(bookPublisher),
-    liAppend(bookPrice),
-    liAppend(bookNumPages),
-    liAppend(bookCover)
+    liAppend([bookTitle]),
+    liAppend([bookSubtitle]),
+    liAppend([bookAuthor]),
+    liAppend([bookIsbn, bookIsbnData]),
+    liAppend([bookAbstract]),
+    liAppend([bookPublisher, bookPublisherData]),
+    liAppend([bookPrice, bookPriceData]),
+    liAppend([bookNumPages, bookNumPagesData]),
+    bookCover
+    // liAppend([bookCover])
   );
 }
 
