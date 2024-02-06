@@ -56,6 +56,7 @@ img {
   font-weight: 600;
 }
 
-button {
+#button_close {
   scale: 1.5;
+  color: black;
 }

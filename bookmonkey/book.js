@@ -1,4 +1,5 @@
 const apiUrl = "http://localhost:4730/";
+const button = document.getElementById("button_back");
 const state = {
   isbn: 0,
   book: {},
@@ -133,3 +134,5 @@ function getBookData() {
       console.error(error);
     });
 }
+
+button.addEventListener("click", () => {});
