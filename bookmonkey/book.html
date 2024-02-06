@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
     <link rel="stylesheet" href="styleBook.css" />
   </head>
   <body>
     <main>
+      <button type="button" class="but close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <ul id="book" style="list-style-type: square"></ul>
     </main>
     <script src="book.js"></script>
