@@ -4,6 +4,22 @@ const books =
 
 console.log(books);
 renderBooks();
+console.log(location.href);
+console.log("search= " + location.search);
+//SCORLL LINK VBBLABLA
+if (location.hash) {
+  console.log(location.hash);
+  console.log(document.querySelector(location.hash));
+  const target = document.querySelector(location.hash);
+  target.scrollIntoView();
+}
+// if (location.search.includes("?where=")) {
+//   console.log("href= " + location.href);
+//   location.href = location.search.replace("?where=", "#");
+//   // location.replace("?where=", "#");
+
+//   console.log("href= " + location.href);
+// }
 
 async function getBooksData() {
   try {
@@ -40,6 +56,7 @@ function renderBooks() {
 
   for (const book of books) {
     const listEl = document.createElement("li");
+    listEl.id = "link" + book.isbn;
 
     const bookTitle = document.createElement("h3");
     bookTitle.innerText = book.title;

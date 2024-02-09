@@ -1,5 +1,6 @@
 const apiUrl = "http://localhost:4730/";
-const button = document.getElementById("button_back");
+let anchorClose = "http://localhost:5500/#";
+const button = document.getElementById("button_close");
 const state = {
   isbn: 0,
   book: {},
@@ -8,9 +9,14 @@ init();
 
 //=============================================//
 function init() {
-  const querystring = new Url_to_queryString(location.search);
-  state.isbn = querystring.isbn;
+  const params = new URL(location).searchParams;
 
+  // const querystring = new Url_to_queryString(location.search);
+  state.isbn = params.get("isbn"); // state.isbn = querystring.isbn;
+
+  //set a link back to MainPage with anchorpoint
+  anchorClose = "http://localhost:5500/#link" + state.isbn;
+  button.href = anchorClose;
   getBookData();
 }
 function render() {
@@ -18,30 +24,33 @@ function render() {
 }
 //==================
 
-/**
- *  USAGE: var x = new Url_to_queryString(location.search)
- *  THEN x.'attribute from url'
- * @param {*} querystring >location.serach
- * @returns
- */
-function Url_to_queryString(querystring) {
-  if (querystring == "") {
-    return;
-  }
-  const wertestring = querystring.slice(1);
-  const paare = wertestring.split("&");
-  let paar, name, wert;
-  paare.forEach((element) => {
-    paar = element.split("=");
-    // paar = [isbn,1234]
-    name = paar[0];
-    wert = paar[1];
-    // name = name.replace("+", " ");
-    // wert = wert.replace("+", " ");
+// LÖSCHEEEE
+// /**
+//  *  USAGE: var x = new Url_to_queryString(location.search)
+//  *  THEN x.'attribute from url'
+//  * @param {*} querystring >location.serach
+//  * @returns
+//  */
+// function Url_to_queryString(querystring) {
+//   if (querystring == "") {
+//     return;
+//   }
+//   const wertestring = querystring.slice(1);
+//   console.log(wertestring);
+//   const paare = wertestring.split("&");
+//   console.log(paare);
+//   let paar, name, wert;
+//   paare.forEach((element) => {
+//     paar = element.split("=");
+//     // paar = [isbn,1234]
+//     name = paar[0];
+//     wert = paar[1];
+//     // name = name.replace("+", " ");
+//     // wert = wert.replace("+", " ");
 
-    this[name] = wert;
-  });
-}
+//     this[name] = wert;
+//   });
+// }
 
 /**
  * creates li-Parent for the Data Array
@@ -135,4 +144,7 @@ function getBookData() {
     });
 }
 
-button.addEventListener("click", () => {});
+// button.addEventListener("click", () => {
+//   // window.location.href = anchorClose;// HIER IRGENDWAS sprung zur richtigen addresse!
+//   button.href = anchorClose;
+// });
